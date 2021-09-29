@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes animationZoom1 {
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes TopToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  body {
+    @apply p-0 m-0 box-border	select-none 
+    text-color-text font-notosans tracking-wide;
+  }
+  input,
+  select,
+  option,
+  textarea,
+  button {
+    @apply focus:outline-none;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+  section {
+    @apply my-10;
+  }
+  li {
+    @apply text-sm;
+  }
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
+  p {
+    @apply text-xs;
+  }
+  iframe {
+    @apply absolute left-0 top-0 h-full w-full;
+  }
+}
+/* h1 {
+  background-image: url('../../public/contact.jpeg')
+} */
+
+@layer components {
+  .page_section_wrapper {
+    @apply py-32 px-48;
+  }
+  /* navbar */
+  .navbar_wrapper {
+    @apply fixed top-0 w-screen z-50 h-28 px-14
+    flex justify-between items-center;
+  }
+  .scrolled_navbar {
+    animation: TopToBottom 1s;
+    @apply fixed top-0 w-screen z-50 h-24 px-14
+    flex justify-between items-center bg-white;
+  }
+  .navbar_link {
+    @apply relative overflow-hidden px-20;
+  }
+  .menu_li {
+    @apply cursor-pointer mx-4;
+  }
+
+  /* hero */
+  .hero_wrapper {
+    @apply w-screen h-screen relative top-0;
+  }
+  #tsparticles {
+    @apply h-screen pb-28;
+  }
+  .hero_img {
+    @apply w-screen h-screen;
+  }
+  .page_hero_desc {
+    @apply bg-color-background absolute -top-40 text-center
+    h-80 w-70vw flex flex-col justify-center items-center;
+  }
+
+  /* news */
+  .news_wrapper {
+    @apply py-20 px-56 bg-color-background 
+     flex absolute -top-10;
+  }
+
+  /* vietnam */
+  .home_viet_wrapper {
+    @apply w-80vw h-22rem bg-color-background2
+    flex;
+  }
+  .home_viet_img {
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    @apply w-50vw h-22rem;
+  }
+  .viet_staff_wrapper {
+    @apply grid grid-flow-row grid-cols-3 
+    grid-rows-2 gap-4 place-items-center;
+  }
+  .viet_News_wrapper {
+    @apply grid grid-flow-col grid-cols-3 gap-16;
+  }
+
+  /* laos */
+  .home_laos_wrapper {
+    @apply w-80vw h-22rem bg-color-background2
+    flex absolute right-0;
+  }
+  .home_laos_img {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    @apply w-50vw h-22rem;
+  }
+
+  /* service */
+  .home_service_wrapper {
+    @apply flex flex-col items-center;
+  }
+  .service_bg_img {
+    @apply w-60 h-80 cursor-pointer 
+    filter blur-xs  duration-200;
+  }
+  .service_content {
+    @apply text-white w-60 h-80 absolute top-0
+    flex flex-col items-center justify-center
+    pointer-events-none;
+  }
+  .service_title {
+    @apply h-48 w-48 bg-color-footer mr-10 
+    flex flex-col items-center justify-center;
+  }
+
+  /* contact */
+  .home_contact_wrapper {
+    background-image: url("../../public/contact.jpeg");
+    @apply w-screen h-28rem bg-no-repeat bg-cover text-white 
+    flex justify-center items-center text-center flex-col;
+  }
+  .input_wrapper {
+    @apply my-6 grid grid-flow-col grid-cols-contact;
+  }
+  .input_form {
+    @apply w-28rem h-8
+    border border-color-text2 rounded-md;
+  }
+  .textarea_form {
+    @apply w-28rem border border-color-text2 rounded-md;
+  }
+  .contact_btn {
+    @apply w-52 h-16 font-medium 
+    cursor-pointer bg-white text-color-text
+    flex justify-center items-center  
+    border border-color-text;
+  }
+
+  /* company */
+  .gmap {
+    @apply relative h-0 overflow-hidden pb-56.25%;
+  }
+
+  /* policy */
+  .table_line {
+    @apply text-xs border border-color-text2;
+  }
+  .table_left {
+    @apply w-20 py-3 pl-2
+    border-r border-color-text2;
+  }
+  .table_right {
+    @apply pl-2;
+  }
+
+  /* ui */
+  .rec_btn {
+    @apply w-52 h-16 font-medium font-roboto tracking-wider
+    cursor-pointer relative overflow-hidden 
+    flex justify-center items-center no-underline 
+    duration-200;
+  }
+  .rec_white {
+    @apply border border-white  hover:bg-white
+    text-white hover:text-color-text;
+  }
+  .rec_gray {
+    @apply border border-color-text  hover:bg-color-text
+    text-color-text hover:text-white;
+  }
+  .viewmore_btn {
+    @apply relative no-underline inline-block font-roboto
+    text-xs font-medium tracking-wider cursor-pointer
+    py-2 pl-4 pr-10 text-center duration-200
+    border-b border-color-text;
+  }
+  .border_animation {
+    @apply relative inline-block cursor-pointer;
+  }
+  .staff_card_wrapper {
+    @apply relative w-64 h-96 bg-white
+    overflow-hidden shadow-md;
+  }
+}
+
+.viewmore_arrow::after {
+  content: "";
+  position: absolute;
+  top: 41%;
+  right: 13px;
+  width: 5px;
+  height: 5px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+.viewmore_arrow:hover::after {
+  right: 11px;
+}
+
+.border_animation::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #484848;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+}
+.border_animation:hover::after {
+  transform: scale(1, 1);
+}
+.service_bg_img:hover {
+  transform: scale(1.1, 1.1);
+  transition: 1s all;
+}
