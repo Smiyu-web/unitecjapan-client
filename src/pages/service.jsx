@@ -12,7 +12,10 @@ const service = () => {
   return (
     <>
       <Layout description={description} title={title}>
-        <PageHero desc="お客様のニーズに合わせ、最初から最後までサポートさせて頂きます。" />
+        <PageHero
+          title="SERVICE"
+          desc="お客様のニーズに合わせ、最初から最後までサポートさせて頂きます。"
+        />
         <Design />
         <Create />
         <Sale />
