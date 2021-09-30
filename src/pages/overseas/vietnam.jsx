@@ -1,7 +1,6 @@
 import React from "react";
 import HomeContact from "../../components/contact/HomeContact";
 import PageHero from "../../components/hero/PageHero";
-import PageHeroImg from "../../components/hero/PageHeroImg";
 
 import Layout from "../../components/layout";
 import VietNews from "../../components/vietnam/VietNews";
@@ -13,7 +12,6 @@ const vietnam = () => {
   return (
     <>
       <Layout description={description} title={title}>
-        <PageHeroImg />
         <PageHero
           title="UNITEC VIETNAM"
           desc={`2013年2月、弊社はベトナムのダナン工科大学のキャンパス内に、\nユニテック ベトナム株式会社を100%子会社として設立しました。`}

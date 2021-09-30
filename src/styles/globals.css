@@ -104,9 +104,18 @@
   .hero_img {
     @apply w-screen h-screen;
   }
+  .page_hero {
+    background-image: url("../../public/company.jpeg");
+    @apply absolute top-0 w-70vw h-96 bg-cover z-10
+    flex justify-center items-center;
+  }
   .page_hero_desc {
-    @apply bg-color-background absolute -top-40 text-center
-    h-80 w-70vw flex flex-col justify-center items-center;
+    @apply absolute top-1/3 w-screen h-80 bg-color-background 
+    flex justify-center items-end;
+  }
+  .page_hero_title {
+    @apply absolute top-1/2 font-roboto 
+    font-semibold tracking-widest;
   }
 
   /* news */
